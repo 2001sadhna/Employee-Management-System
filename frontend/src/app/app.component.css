@@ -1,0 +1,22 @@
+h1 {
+  margin-bottom: 4px;
+}
+
+h2 {
+  color: #333;
+  margin-top: 24px;
+}
+
+form {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+button {
+  margin-top: 8px;
+}
