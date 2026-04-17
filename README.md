@@ -29,7 +29,9 @@ npm install
 npm start
 ```
 
-The frontend will use `http://localhost:8080/api/books` to communicate with the backend.
+The frontend will use `http://localhost:8080/api/books` to communicate with the backend when running locally.
+
+For production hosting, update `frontend/src/environments/environment.prod.ts` with the deployed backend URL before building.
 
 ## Deployment
 
