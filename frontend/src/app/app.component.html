@@ -1,0 +1,52 @@
+<div class="container">
+  <header>
+    <h1>Library Management System</h1>
+  </header>
+
+  <section>
+    <h2>Add a New Book</h2>
+    <form (ngSubmit)="addBook()">
+      <div>
+        <label>Title</label>
+        <input [(ngModel)]="newBook.title" name="title" placeholder="Enter title" />
+      </div>
+      <div>
+        <label>Author</label>
+        <input [(ngModel)]="newBook.author" name="author" placeholder="Enter author" />
+      </div>
+      <div>
+        <label>ISBN</label>
+        <input [(ngModel)]="newBook.isbn" name="isbn" placeholder="Enter ISBN" />
+      </div>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <div *ngIf="errorMessage" style="color: #d32f2f; margin-top: 12px;">{{ errorMessage }}</div>
+  </section>
+
+  <section>
+    <h2>Book List</h2>
+    <div *ngIf="loading">Loading books...</div>
+    <table *ngIf="!loading && books.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.id }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.isbn }}</td>
+          <td><button class="delete" (click)="removeBook(book.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!loading && books.length === 0">No books available.</div>
+  </section>
+</div>
